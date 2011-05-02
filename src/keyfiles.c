@@ -1156,7 +1156,6 @@ ssh_private_key _privatekey_from_file(void *session, const char *filename,
 #elif defined HAVE_LIBCRYPTO
   bio = BIO_new_file(filename,"r");
   if (bio == NULL) {
-	  fclose(file);
       ssh_set_error(session, SSH_FATAL, "Could not create BIO.");
       return NULL;
   }
